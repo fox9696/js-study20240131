@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 식별자는 중복되어서는안됩니다 .//
+        // 자바스크립트에서 var로 변수를 선언하면 에러가나지않으므로 조심해야한다 //
+
+        var apple = '사과';
+        var apple = '애플';
+        console.log(apple);
+
+        // 식별자의 이름은 대/소문자를 철저하게구분합니다. // 
+        var banana = '바나나';
+        var BANANA = '빠나나';
+        console.log(banana);
+        console.log(BANANA);
+
+        //    식별자는 숫자로만 이루어지거나, 숫자로 시작할수도없습니다 //
+        //    var 700 = 365;   ( X )   //  
+        //     var 7num = 7;         //
+        var num7 = 7;
+        var n7u7m7 = 7;
+
+        // 식별자는 특수기호 작성이 불가능합니다 //
+        // $  _  는 가능합니다  (하지만 두개는 사용하기로한곳이 약속되어있음) //
+        //var my-name = '홍길동';//
+
+        var myName = '홍길동'; // 주로 카멜케이스를사용함!  *2단어이상사용시 대문자구분 //
+        var my_name = '홍길동'; // snake case  _ 들어가면 snake case//
+        var myPhoneNumber = '01012345678'; //camel *얘를많이씀
+        var my_phone_number = '01012345678'; //snake
+        var MyPhoneNumber = '01012345678'; //pascal  클래스 생성자 이름에사용 (user my 등)
+        var strMyPhoneNumber = '01012345678'; //Hungarian  앞에스타일을붙임
+       // 식별자 이름을 한글 혹은 영어 이외의 언어로작성하는것은 에러는아니지만 
+       //별로 권장하지않습니다 .
+        var 과일 = '오렌지';
+        console.log(과일);
+    
+    
+    
+    
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
