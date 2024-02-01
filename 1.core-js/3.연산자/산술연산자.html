@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+var num=3;
+console.log(27/5);  // 몫을 가져옴  = 5.4
+console.log(27%5);  // 나머지를가져옴  = 2
+console.log(num ** 4); //ES7 이후출시된 거듭제곱 연산자 (num의 4제곱을계산한거임)
+console.log(num*num);
+console.log(Math.pow(num,4));//ES7 이전에 사용하던 거듭제곱 함수
+
+console.log('-----------------------------');
+
+
+ // 단항 산술 연산자 ++, --        * 단항은 피연산자 앞,뒤 어디에붙혀도상관없음 ++2  or 2++ 
+ var x = 3;
+ x++;
+ x++;
+ x--;
+
+ console.log('x:' + x);
+
+//전위(prefix) , 후위(suffix) 연산 
+var a = 10 
+var result;
+result = a++;   // *연산이뒤에붙음*   후위 연산 : 선연산 후증감
+console.log(`reslt:${result}, a:${a}`);   
+
+
+result = ++a;   // 전위연산 연산 : 선증감 후연산 
+console.log(`reslt:${result}, a:${a}`); 
+ 
+ 
+console.log('----------------');
+
+
+//대입(할당) 연산자 , 복합대입 연산자
+var i = 9 ; 
+i += 3;   // i = i+3
+i -= 8;   // 4 
+i *= 10;  // 40 
+i /= 8;  // 5
+i %= 3; // 2
+i **= 4; // 16
+console.log('i:' +i);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </script>
+
+
+
+
+
+
+
+</body>
+</html>
