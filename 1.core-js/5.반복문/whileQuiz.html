@@ -24,8 +24,25 @@
 
 
 
+var x = +prompt(`첫번째 정수를 입력하세요`);
+var y = +prompt(`두번째 정수를 입력하세요`);
+
+var total = 0; 
+var n = x;
+
+if(x > y) {
+   var temp = y;
+    y = x; 
+    x = temp;
+}
 
 
+while(x <= y) {
+    total += x; 
+    x++; 
+
+}
+console.log(`${n} 부터 ${y} 까지의 누적합계 : ${total}`);
 
 
 
