@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+// let이랑 동일한효과  +  반복문에사용불가능  반복문은let써야함
+const x= `메롱` ;
+console.log(x);
+
+// x = `안메롱`;     << let은 이렇게 밑에서 따로 값선언 하면 변경되는데 const는 변경이 불가능
+
+
+
+// const와 객체 ( 객체 , 배열 , 함수 모두포함)
+const person = {
+    name : `park` , 
+    age : 20 
+};
+//객체 내의 프로퍼티값을변경하는것은괜찮다.
+//왜냐면 객체 주소값이 바뀌는건 아니니까
+person.name = `kim` ;
+console.log(person.name);    //출력됨 왜? *person의 객체안에 name을 바꾼것뿐이라 
+                             // stack , heap 영역이해하기 person은 stack이라는영역에잇고생성되며
+                             // 가상의주소를
+                            //받게되는데 객체안의내용은 heap이라는영역으로들어감  
+                            // 그래서 person의객체밖에서 name을바꿧을땐 적용이된거임 person
+                            //의 주소를바꾼건아니기에 
+
+
+                         
+//안되는 코드 (객체자체를 변경하는 행위)const를선언하지않아서 person은 애초에주소가다른다른객체
+person = {
+    name: `lee`,
+    age:30 
+};     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
