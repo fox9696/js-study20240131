@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul id="fruits">
+        <li class="fr apple">사과</li>
+        <li class="fr banana">바나나</li>
+        <li class="fr grape">포도</li>
+        <li class="fr peach">복숭아</li>
+    </ul>
+    
+<script>
+
+//const $grape = document.querySelector(`.grape`);
+//const $grape = document.querySelector(`#fruits li:nth-child(3)`);
+const $grape = document.querySelector(`.banana + li`);
+console.log($grape);
+
+$grape.textContent = `맛있는 포도`;  //텍스트바뀜
+
+const $fr = document.querySelector(`.fr`);  //queryselector는 발견된 첫번째태그만가져옴 그래서li는 클래스가 전부 
+console.log($fr);                           // fr인데도 apple만가져옴
+                                            
+
+//queryselectorAll 이 가져오는 데이터묶음은
+//배열이 아닌 유사베열이므로 , 배열 문법을 사용하기힘들다 .
+//그래서 유사배열을 실제 배열로 바꿔서 쓰는 것이 좋습니다 .
+const $frAll = document.querySelectorAll(`.fr`);  
+console.log($frAll);
+//$frAll.push(`메롱`); x 불가능 *배열이 아니기에
+
+
+//유사배열을 순수한 배열로 변경하기
+const $fruitsArray = [...$frAll];
+
+$fruitsArray.pop().textContent = `오우뤤쥐`; 
+
+//요소를 한번에 여러 개 취득하는 기타 매서드들도 유사배열형태로 요소가 리턴됩니다. 
+// 배열로 변경해서 사용하세요!
+const $frAllbyTagName = document.getElementsByTagName(`li`);
+console.log($frAllbyTagName);
+
+const $frAllbyClassName = document.getElementsByClassName(`fr`);
+console.log($frAllbyClassName);
+
+for(let $f of $fruitsArray) {
+    $f.style.border = `1px dashed tomato`; 
+    $f.style.margin = `10px`;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
