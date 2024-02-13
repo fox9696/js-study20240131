@@ -28,36 +28,50 @@
     while(true) {
       // '그만' 문자열이 들어올 수 있기 때문에 +를 붙이지 않음.
       var inputData = prompt('숫자를 입력하세요!\n그만 두시려면 "그만" 이라고 입력하세요!');
+     
+    
+
 
       if(inputData === '그만') {
         // confirm: 확인, 취소 버튼이 있는 알림창.
         // 확인을 누를 시에 true, 취소를 누르면 false가 반환됩니다. if문과 주로 많이 사용.
         if(confirm('정말 그만 두시겠어요?')) break;
         else continue;
+       
         
+
       }
+
+
 
       if(!inputData) { // prompt에 아무것도 입력하지 않고 확인 -> 빈 문자열 '' -> falsy를 띠게 됨.
         alert('값을 정확하게 입력하세요!');
         continue;
       }
 
+
+
       // 입력받은 숫자를 배열에 저장
       numbers.push(+inputData);
     }
+
 
     // 총합 구하기
     var total = 0;
     // for(var i=0; i<numbers.length; i++) {
     //   total += numbers[i];
     // }
+     
 
     for(var n of numbers) {
       total += n;
     }
 
+
+
     alert(`입력한 숫자 목록: ${numbers}\n입력한 숫자 총합: ${total}`);
 
+   
 
   </script>
 

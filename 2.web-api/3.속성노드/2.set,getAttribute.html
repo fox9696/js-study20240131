@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="name" value="kim" class="user-name">
+
+    <p id="text">hello</p>
+
+
+
+
+    <script>
+
+const $input = document.querySelector(`input[type=text]`);
+
+//input 의 value라는 속성의 값을 알고싶다
+
+// const inputvalue = $input.attributes.value.value;   *앞에배운방식
+const inputvalue = $input.getAttribute(`value`);  // 이게 좀더 요약 방식 `` 안에 알고싶은값쓰면됨 
+console.log(inputvalue);
+
+
+// value 속성의 값 변경 
+// $input.attributes.value.value = `메롱`;         *앞에배운방식
+$input.setAttribute(`value` , `안녕하세요`);      //좀더요약방식 좌측이기존 우측이변경할값
+
+
+
+//p 태그에 title 속성 추가 
+const $paragraph = document.getElementById(`text`);
+$paragraph.setAttribute(`title`, `메롱`);    //title 은원래없엇는데 없는건 그냥 좌측에넣으면 자동추가됨 
+                                             //그래서 없던 title에 메롱이추가됨
+
+
+//속성의 존재 유무 
+console.log($input.hasAttribute(`class`));     //input 태그에 class 유무를알아보는명령어 *잇엇기에 true
+console.log($paragraph.hasAttribute(`class`)); // 이건 class가 없엇기에 false
+if($input.hasAttribute(`class`)) {
+    // class라는 속성이 존재한다면 , class 속성을 지워줘
+} else {
+//없으면 클래스를 새롭게 부여해줘
+$input.setAttribute(`class` , `user-name`);
+}
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
