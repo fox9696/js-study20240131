@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: lightgray;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .red {
+            color: red;
+        }
+        .blue {
+            color: blue;
+        }
+        .circle {
+            border-radius: 50%;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="box red">hello</div>
+
+   
+   
+   
+   <script>
+
+const $box = document.querySelector(`.box`);
+console.log($box.attributes.class.value);
+console.log($box.getAttribute(`class`));
+console.log($box.className);   //이게제일간단한명령어
+
+//  $box.setAttribute(`class` , `box blue`)   //그냥 blue만쓰면 box도사라짐 
+// $box.className = `box blue`   
+
+//클래스를 각각 조작할 때는 classList 프로퍼티를 사용하는 게 좋습니다 .
+console.log($box.classList);   // box 랑 red 가 따로분리될걸확인할수잇음
+
+//요소에 클래스를 추가
+// $box.className = `box blue circle`;   1번방식 Name 방식
+$box.classList.add(`circle`);     //2번방식 classList 로 쓰면 이런방식
+$box.classList.add(`abc`,`def`,`ghi`);  
+
+//요소 특정 클래스를교체
+$box.classList.replace(`red`, `blue`);  //기존에잇던 레드를 블루로교체  좌 : 기존 / 우:새로운값
+
+//요소에 특정 클래스를 삭제 
+$box.classList.remove(`circle`);  
+$box.classList.remove(`abc`,`def`,`ghi`);    //위에 추가한거 삭제됨
+
+//요소에 특정 클래스가 존재하는지 확인   *클래스가 여러개잇을때 확인하는법
+console.log($box.classList.contains(`red`));     //true , false 로 나옴 *위에서 blue로 바꿔서flase
+
+//toggle () : 해당클래스가 존재하면삭제 존재하지않으면추가 if문보다 200배편함
+$box.classList.toggle(`circle`);  // circle잇으면삭제 없으면 circle추가 
+$box.classList.toggle(`blue`);  // blue는 잇엇기에 삭제됨 .
+
+
+
+
+
+
+    </script>
+</body>
+</html>
