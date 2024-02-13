@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button type="button" id="btn1">클릭하세요!</button>
+    <button type="button" id="btn2">마우스를올려보세요!</button>
+    <button type="button" id="btn3">마우스를 치워보세요!</button>
+
+    
+
+<script>
+
+//이벤트 핸들러 정의
+function hello() {
+    alert(`hello!`);
+}
+const $btn = document.getElementById(`btn1`);
+const $btn2 = document.getElementById(`btn2`);
+const $btn3 = document.getElementById(`btn3`);
+
+// $btn.onclick = hello;
+$btn.onclick = function() {
+    alert(`안녕하세요`);
+}
+$btn.onclick = function() {
+    alert(`안녕안하세요~`);
+}
+
+
+$btn2.onmouseover = function() {
+    alert(`마우스가 올려져버려~~`);
+}
+
+$btn3.onmouseout = () => alert(`마우스를 치우셧군요~??`);
+
+
+//핸들러 제거
+$btn3.onmouseout = null;   // null은 눈으로보여주려고 직접선언 undifind는 값이아직할당이안됨
+
+
+
+
+
+
+</script>
+</body>
+</html>
