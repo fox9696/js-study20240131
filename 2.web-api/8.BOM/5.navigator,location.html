@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">네아버로 이동!</button>
+
+
+
+<script>
+const $btn = document.getElementById(`btn`);
+
+$btn.onclick = () => { 
+    // location 객체는 현재 활성화 된 웹페이지의 url정보를 포함하는 window객체의 프로퍼티
+    console.log(location);
+
+    //location.href : 전체 URL이 포함된 문자열, 이게변경된다면 변경된 새로운 페이지로 이동합니다.
+    //location.href = 'http://www.naver.com'
+
+    // 새로고침 함수 : reload()  *페이지가 새로고침됨
+    //location.reload();
+
+
+    //replace('URL') : 현재 리소스를 대체하는 새로운url로 이동  
+    //*얜 이동하면 뒤로가기가없어져서 전 화면으로못감
+    //뒤로 가기 버튼이 비활성화 됩니다.
+     location.replace(`http://www.naver.com`);
+
+}
+
+
+// 성공 시 실행할 콜백 함수 
+function success(position) {
+console.log(position);
+console.log(`위도 :` + position.coords.latitude);
+console.log(`경도 :` + position.coords.longitude);
+}
+
+//실패 시 실행할 콜백 함수 
+function fail(error) {
+alert(`위치정보를 얻는 데 실패했습니다. 위치정보를 승인해 주세요!`);
+console.log(error);
+}
+
+
+
+(function() {
+    //getCurrntPosition(위치 정보 승인시 실행할 함수 , 위치정보실패시 실행할 함수);
+navigator.geolocation.getCurrentPosition(success , fail);
+})();
+
+</script>
+
+
+
+</body>
+</html>
